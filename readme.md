@@ -23,17 +23,29 @@ $ ./make
 
 ZeroBloat language has zero-bloat syntax: there no syntax.
 
-```
+```console
 $ touch hello-world.zb
-$ bin/zb-minimal hello-world.zb
+$ bin/zb-minimal.out hello-world.zb
 Hello, world!
 ```
+
+Also, there is professional version of `zb`:
+
+```console
+$ echo 'hello, world!' > hello-world.zb
+$ zb hello-world.zb
+hello, world!
+```
+
+## Safety
+
+ZeroBloat is fully memory-safe language without
+undefined behaviours (unlike C).
 
 ## To-Do List
 
 - [x] ZeroBloat minimal version (`zb-minimal`)
-- [ ] ZeroBloat major (`zerobloat-plaintext`)
-- [ ] True ZeroBloat (`zb`)
+- [x] True ZeroBloat (`zb`)
 
 ## Special thanks to
 
