@@ -65,12 +65,7 @@ static long write(long fd, const void *buff, unsigned long count) {
     ".text                     \n" \
     ".global _start            \n" \
     "_start:                   \n" \
-    "  xor %rbp,%rbp           \n" \
-    "  mov %rsp,%rdi           \n" \
-    ".weak _DYNAMIC            \n" \
-    ".hidden _DYNAMIC          \n" \
-    "  lea _DYNAMIC(%rip),%rsi \n" \
-    "  andq $-16,%rsp          \n" \
+    "  mov %rsp, %rdi          \n" \
     "  call " #crt "           \n" \
   )
 
@@ -99,7 +94,7 @@ loslib_noreturn()
 static void loslib_crt_noreturn(long *v) {
   main((int)v[0], (char**)(v + 1));
 
-  while (1) { } /* noreturn */
+  for (;;) { } /* noreturn */
 }
 
 #include "in/undefines.h"
