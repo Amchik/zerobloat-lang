@@ -37,6 +37,18 @@ $ zb hello-world.zb
 hello, world!
 ```
 
+### Rust port
+
+`zbrs` is a port of rust's 0% bloat language. Usage:
+
+```console
+$ touch 'Hello, world!'
+$ zbrs 'Hello, world!'
+Hello, world!
+$ wc -c 'Hello, world!'
+0
+```
+
 ## Safety
 
 ZeroBloat is fully memory-safe language without
